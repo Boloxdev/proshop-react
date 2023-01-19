@@ -1,11 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import colors from 'colors'
+import mongoose from 'mongoose'
 import products from './data/products.js'
-
+import connectDB from './config/db.js'
 
 dotenv.config();
 
 const app = express();
+
+connectDB()
 
 app.get('/', (req, res) => {
     res.send('API RUNNING')
